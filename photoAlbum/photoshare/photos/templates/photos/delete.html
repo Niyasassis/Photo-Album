@@ -1,0 +1,28 @@
+
+{% extends 'main.html' %}
+{% load static %}
+
+{% block  content  %}
+
+<div class="container justify-content-center">
+    <div class="row">
+      <div class="col">
+        <a class=" btn btn-dark my-2" href="{% url 'view' item.id%}"> Go Back</a>
+
+        <form action="{% url 'delete' item.id %}" method="POSt">
+            {% csrf_token %}
+            <button type=submit class="btn btn-danger" > Confirm To Delete </button>
+        </form>
+ 
+        <div class=" lgImgDiv">
+          <img class="lgImg" src="{{item.image.url}}" alt="">
+          <p class="text">
+          {{id.description}}
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

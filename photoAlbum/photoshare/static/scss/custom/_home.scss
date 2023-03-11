@@ -1,0 +1,85 @@
+@use "../common/_common"as *;
+
+
+body{
+	background-color: black;
+	color: $white;
+
+	.header{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: $baseline;
+		background: $gradient1;
+
+	}
+
+ .sideCol{
+	@include media-lg{
+		border-right:  1px solid $darkGray;
+	}
+
+	.sideList{
+		.listDiv{
+					border:  1px solid $red;
+					border-radius: 5px;
+					padding: $baseline;
+					background: $gradient2;
+					color: $textGray;
+			.list{
+
+				padding: $baseline;
+				border-bottom: 1px solid $borderGray;
+
+
+			}
+
+
+		}
+	}
+ }
+
+ .galleryCol{
+	.cardContainer{
+		display: flex;
+		flex-wrap: wrap;
+
+
+		.card{
+
+			width: 100%;
+			
+			min-height: 300px;
+			
+			color: $textGray;
+
+			@include media-md{
+				width: 80%;
+				max-width: 285px;
+				margin: $baseline ;
+				
+			}
+
+			.image{
+				width: 100%;
+				object-fit: cover;
+				object-position: center;
+				@include media-md{
+					min-height: 190px;
+				}
+					
+			}
+		
+		}
+	}
+ }
+
+.lgImgDiv{
+	height: 40vh;
+	.lgImg{
+		max-width: 100%;
+		min-height: 100%;
+	}
+}
+}
+

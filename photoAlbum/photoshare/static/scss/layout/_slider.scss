@@ -1,0 +1,131 @@
+@use "../common/_functions"as *;
+@use "../common/_breakpoints"as *;
+@use "../common/_variables"as *;
+@use "../common/_form"as *;
+
+//Center align Content//
+[loop-slider] {
+ /* Custom Variables */
+ $slider-height: 200px;
+ $number-of-cards: 7;
+ $card-width: 200px;
+ $card-height: 200px;
+ $card-gap: -20px;
+ $card-offset: $card-width+$card-gap;
+ $animation-duration: 3 * $number-of-cards;
+ $animation-delay: calc($animation-duration / $number-of-cards);
+ $offset-limit: -$card-offset;
+ /* Styles */
+ width: calc(100% + (100px));
+ height: $slider-height;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ overflow: hidden;
+
+ @for $i from 1 through $number-of-cards {
+  @keyframes loop {
+   0% {
+    transform: translateX($card-offset * $number-of-cards);
+   }
+
+
+
+   100% {
+    transform: translateX($offset-limit);
+   }
+  }
+
+  [slide] {
+   background-color: $color1;
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+   width: $card-width;
+   height: $card-height;
+   margin-right: $card-gap;
+
+   &:nth-of-type(#{$i}) {
+    transform: translateX($card-offset * ($i - 1));
+    animation: loop #{$animation-duration}s #{($i - $animation-duration) * $animation-delay}s linear infinite;
+   }
+  }
+ }
+}
+
+
+[single-loop-slider] {
+ /* Custom Variables */
+ $container-width: 300px;
+ $container-height: 300px;
+ $number-of-slides: 4;
+ $card-width: 300px;
+ $card-height: 300px;
+ $card-spacing: 0;
+ $card-offset: $card-width+$card-spacing;
+ $animation-duration: 4 * $number-of-slides;
+ $animation-delay: $animation-duration / $number-of-slides;
+ $percent-offset: 100%/$number-of-slides/2;
+ $offset-limit: -$card-offset;
+ $start-1: 50% - $percent-offset;
+ $end-1: $start-1 + 5;
+ $start-2: 50% + $percent-offset;
+ $end-2: $start-2 + 5;
+ /* Styles */
+ width: $container-width;
+ height: $container-height;
+ margin: 0 auto;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ overflow: hidden;
+
+ @for $i from 1 through $number-of-slides {
+  @keyframes loop-full {
+   0% {
+    transform: translateX(75%);
+   }
+
+   #{$start-1} {
+    transform: translateX(75%);
+   }
+
+   #{$end-1} {
+    transform: translateX(-50%);
+   }
+
+   #{$start-2} {
+    transform: translateX(-50%);
+   }
+
+   #{$end-2} {
+    transform: translateX(-175%);
+   }
+
+   100% {
+    transform: translateX(-175%);
+   }
+  }
+
+  [slide]:nth-of-type(#{$i}) {
+   transform: translateX(75%);
+   animation: loop-full #{$animation-duration}s #{($i - $animation-duration) * $animation-delay}s ease-in-out infinite;
+  }
+ }
+
+ [slide] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $card-width;
+  height: $card-height;
+  display: block;
+  line-height: $card-width;
+  margin-right: $card-spacing;
+  background-color: $lightGray;
+  left: 50%;
+
+
+ }
+}

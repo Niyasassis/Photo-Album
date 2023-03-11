@@ -1,0 +1,41 @@
+/*Primary Colors*/
+$color1: #9DD520;
+$color2: #242323;
+$color3:#F3EDE0;
+$color4:#242323;
+$color5:#E1F9FF;
+$color6:#9092946b;
+/*Secondary Colors*/
+$white: #ffffff;
+$lightGray: #f6f5fa;
+$borderGray: #ebedf3;
+$visibleGray: #c8cbd3;
+$textGray: #909294;
+$gray: #5d5e5f;
+$darkGray: #333333;
+$black: #212427;
+/*Form Colors*/
+$red: #ff3232;
+$green: #4ac434;
+$blue: #385bf7;
+$yellow: #f8ab04;
+$inputColor1:#fcfffb;
+$inputColor2:#99cf8e;
+$inputColor3:#73c47a;
+$inputColor4:#7abb66;
+$inputBorder:#eef0f7;
+/*Gradients*/
+$gradient1:linear-gradient(to right top, #9dd520, #a1d729, #a5d930, #a8dc37, #acde3e, #afe043, #b3e347, #b6e54c, #b9e851, #bdea55, #c0ed5a, #c3f05e);
+$gradient2:linear-gradient(to right top, #141414, #171717, #191919, #1c1c1c, #1e1e1e, #1f1f1f, #212121, #222222, #222222, #232323, #232323, #242323);
+$gradient3:linear-gradient(to right, #f6f6f6, #f7f7f7, #f7f7f7, #f8f8f8, #f8f8f8, #f9f9f9, #f9fafa, #fafbfa, #fbfcfc, #fcfdfd, #fefefe, #ffffff);
+$gradient4:linear-gradient(to right, #f6f6f6, #f7f7f7, #f7f7f7, #f8f8f8, #f8f8f8, #f9f9f9, #f9fafa, #fafbfa, #fbfcfc, #fcfdfd, #fefefe, #ffffff);
+/*Transition*/
+$transition1 : 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+$transition2 : 0.5s cubic-bezier(0.37, 0, 0.63, 1);
+$transition3 : 0.7s cubic-bezier(0.37, 0, 0.63, 1);
+/*Box Shadow*/
+$shadow1:rgba(0, 0, 0, 0.1) 0px 4px 12px;
+$shadow2:rgba(0, 0, 0, 0.075) 0px 3px 6px,
+rgba(0, 0, 0, 0.116) 0px 3px 6px;
+$shadow3:rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;

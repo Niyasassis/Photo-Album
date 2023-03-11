@@ -1,0 +1,59 @@
+{% extends 'main.html/' %}
+{% load static %}
+
+<div class="adding">
+    {% block content %}
+    <div class="container ">
+        <a class=" btn btn-dark my-2" href="{% url 'gallery' %}"> Go Back</a>
+
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+
+            <div class="card ">
+
+
+
+                <form method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+                    <div class="mb-3" style="width: 100%;>
+                      <label for="" class="form-label ">Select Categorey</label>
+                      <select name="category" id="">
+                          <option value="null">Select a Category</option>
+                          {% for c in  categories %}
+                          <option value="{{c.id}}">{{c.name}}</option>
+                          {% endfor %}
+                      </select>
+                   
+                  </div> 
+
+
+                    <div class="mb-3" style="width: 100%;>
+                        <label for="" class="form-label ">Description</label>
+                        <textarea required name="description" class="form-control" id="" rows="3"></textarea> 
+                    </div>      
+                    
+              
+                    
+                    <div class="mb-3" style="width: 100%;>
+                        <label for="" class="form-label ">Add New Category</label>
+                        <input name="newCategory" class="form-control " placeholder="create new category" type="text">
+                    </div>
+                    
+
+                    <div class="mb-3" style="width: 100%;>
+                        <label for="formFileSm" class="form-label ">Upload Image</label>
+                        <input required name="image" class="form-control form-control-sm" id="formFileSm" type="file">
+                      </div>
+                    
+   
+                    <button type="submit"  class="btn btn-block btn-primary">Submit</button>
+                  </form>
+
+          </div>
+          </div>
+    
+        </div>
+      </div>
+    {% endblock  %}    
+</div>

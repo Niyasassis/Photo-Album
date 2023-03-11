@@ -1,0 +1,430 @@
+@use "../common/_functions"as *;
+@use "../common/_breakpoints"as *;
+@use "../common/_variables"as *;
+@use "../common/_form"as *;
+
+
+//Tab Bar//
+.smTabBar {
+ .tabMenu {
+  font-size: $fontMob-2;
+  font-weight: 500;
+  padding: .5rem;
+  padding-bottom: .75rem;
+ }
+}
+
+.mdTabBar {
+ .tabMenu {
+  font-size: $fontMob-1;
+  font-weight: 500;
+  padding: .75rem;
+  padding-bottom: $baseline;
+ }
+}
+
+.lgTabBar {
+ .tabMenu {
+  font-size: $baseline;
+  font-weight: 600;
+  padding: $baseline;
+ }
+}
+
+.xlTabBar {
+ .tabMenu {
+  font-size: $font-4;
+  font-weight: 600;
+  padding: $s3;
+  padding-bottom: $font-1;
+ }
+}
+
+.tabMenuSection {
+ width: 100%;
+ overflow: hidden;
+ transition: $transition1;
+
+ .tabMenuNav {
+  width: 100%;
+  display: inline-block;
+  border-bottom: 1px solid $borderGray;
+
+  .activeTabMenu {
+   color: $black !important;
+
+   &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color3;
+   }
+  }
+
+  .tabMenu {
+   display: inline-block;
+   color: $textGray;
+   cursor: pointer;
+   transition: $transition1;
+
+   &:hover {
+    color: $black;
+   }
+  }
+ }
+
+ .tabBarWrapper {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+
+  .tabBarSlide {
+   width: 100%;
+   min-width: 100%;
+   height: 0;
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   flex-wrap: wrap;
+  }
+ }
+}
+
+.stepSeriesDropdownForm {
+
+ @include media-lg {
+  padding-left: $baseline;
+ }
+
+ .dropList {
+  &:nth-child(1) {
+   @include media-lg {
+    .dropBox {
+     padding-top: 0 !important;
+    }
+   }
+  }
+
+  &::before {
+   content: '';
+
+   @include media-lg {
+    position: absolute;
+    top: 0;
+    left: -18px;
+    width: 1px;
+    height: 100%;
+    border-left: 2px dashed $lightGray;
+
+   }
+  }
+
+  .dropBox {
+   .number {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color2;
+    font-size: $fontMob-1;
+    padding: .5rem;
+    background-color: $lightGray;
+    border: 1px solid $lightGray;
+    border-spacing: 5px;
+    border-radius: $radius;
+    margin-right: $baseline;
+    z-index: 1;
+
+    @include media-lg {
+     left: -35px;
+     margin-right: 0;
+    }
+   }
+
+   .title {
+    @include media-lg {
+     left: -$baseline;
+    }
+   }
+  }
+ }
+}
+
+.dropdownForm {
+ width: 100%;
+ max-width: 700px;
+
+ .dropDownDiv {
+  width: 100%;
+
+  .dropBoxTitle {
+   color: $black;
+   font-weight: 500;
+  }
+
+  .dropList {
+   .dropBox {
+    color: $darkGray;
+    padding: $baseline 0;
+    border-bottom: 1px solid $borderGray;
+
+    @include media-md {
+     padding: $font-4 0;
+    }
+
+    @include media-lg {
+     padding: $font-2 0;
+    }
+
+    &:hover {
+     color: $color1;
+
+     .dropIcon {
+      border: 1px solid $inputColor2;
+
+      i {
+       color: $color3;
+      }
+     }
+    }
+
+    .title {
+     margin: 0;
+     margin-right: auto;
+     font-weight: 600;
+    }
+
+    .icon {
+     height: 35px;
+     background-color: $white;
+     border: 1px solid $borderGray;
+     border-radius: $inputRadius;
+     padding: .5rem;
+     margin-left: .5rem;
+     cursor: pointer;
+     transition: all .3s ease-in;
+
+     &:hover {
+      border: 1px solid $textGray;
+
+      i {
+       color: $color2;
+      }
+     }
+
+     i {
+      color: $textGray;
+      font-size: $baseline;
+      line-height: .8;
+      cursor: pointer;
+      transition: all .3s ease-in;
+     }
+
+     .dropRemove {
+      display: none;
+     }
+    }
+
+
+   }
+
+   .dropContent {
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    padding: $baseline 0;
+
+    @include media-md {
+     padding: $s3 0;
+    }
+
+   }
+  }
+ }
+
+ .formDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .profileSection {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+
+   @include media-md {
+    flex-direction: row;
+   }
+
+   .profileDetails {
+    order: 2;
+    flex: 1;
+
+    @include media-md {
+     order: 1;
+     padding-right: $xsSpacing;
+    }
+   }
+
+   .avatarUpload {
+    order: 1;
+
+    @include media-md {
+     order: 2;
+    }
+   }
+  }
+
+ }
+
+ .formBoxSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .formBoxDiv {
+   margin-bottom: $baseline;
+  }
+
+  .summaryList {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   padding: $baseline;
+   background-color: $lightGray;
+   border: 1px solid $borderGray;
+   border-radius: $radius;
+   cursor: pointer;
+   transition: all .3s;
+
+   &:hover {
+    background-color: $lightGray;
+   }
+
+   .title {
+    margin: 0;
+    cursor: pointer;
+   }
+
+   .edit {
+    cursor: pointer;
+
+    i {
+     cursor: pointer;
+    }
+   }
+  }
+
+  .formBoxIntro {
+   display: flex !important;
+  }
+
+  .formBox {
+   width: 100%;
+   display: none;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   padding: $baseline;
+   margin-top: $baseline;
+   background-color: $lightGray;
+   border: 1px solid $borderGray;
+   border-radius: $radius;
+   cursor: pointer;
+   transition: all .3s;
+
+   .inputDiv {
+    padding-top: .5rem;
+
+    label {
+     position: relative;
+     top: 0;
+     left: 0;
+     font-size: $fontMob-1;
+     background-color: transparent;
+     margin-bottom: .35rem;
+     padding: 0;
+    }
+   }
+  }
+
+  .addSectionBtn {
+   margin: 0 auto;
+   margin-top: $baseline;
+
+   i {
+    margin: 0;
+    margin-right: $baseline;
+   }
+  }
+ }
+}
+
+@mixin dropDown {
+ width: 100%;
+ max-width: 700px;
+ margin: 0 auto;
+
+ .dropBoxTitle {
+  color: $black;
+  font-weight: 500;
+ }
+
+ .dropList {
+  display: block;
+
+  .dropBox {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   color: $darkGray;
+   font-size: $baseline;
+   font-weight: 600;
+   padding: $baseline 0;
+   transition: $transition1;
+   cursor: pointer;
+
+   &:hover {
+    color: $color1;
+
+    span {
+     i {
+      color: $color3;
+     }
+    }
+   }
+
+   .moreBtn {
+    margin-left: auto;
+    padding: $baseline;
+   }
+
+   span {
+    cursor: pointer;
+    transition: $transition1;
+
+    i {
+     color: $gray;
+     font-size: $fontMob-1;
+     cursor: pointer;
+     transition: $transition1;
+    }
+
+    .dropRemove {
+     display: none;
+    }
+   }
+  }
+
+  .dropContent {
+   display: none;
+   width: 100%;
+  }
+ }
+}
+

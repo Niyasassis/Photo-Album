@@ -1,0 +1,26 @@
+
+{% extends 'main.html' %}
+{% load static %}
+
+{% block  content  %}
+
+<div class="container justify-content-center">
+    <div class="row">
+      <div class="col">
+        <a class=" btn btn-dark my-2" href="{% url 'gallery' %}"> Go Back</a>
+        {% comment %} <a  class="btn btn-danger" href=" {% url 'delete' %}image.id " > Delete </a> {% endcomment %}
+        <a  class="btn btn-info" href="{{image.image.url}}" download > Download </a>
+        <a  class="btn btn-danger" href="{% url 'delete' image.id%}" > Delete </a>
+ 
+        <div class=" lgImgDiv">
+          <img class="lgImg" src="{{image.image.url}}" alt="">
+          <p class="text">
+          {{image.description}}
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
